@@ -1,0 +1,17 @@
+<div class="container">
+	Home
+
+	<div class="well">
+		<%= link_to "New Trip", new_trip_path, remote: true, class: "btn btn-success" %>
+
+		<div class="new-trip"></div>
+	</div>
+
+	<div class="trip-index">
+		<%= render "index" %>
+	</div>
+
+	<div id="trip-modal" class="modal fade"></div>
+
+
+</div>
