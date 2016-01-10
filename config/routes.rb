@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root 'trips#index'
 
-  resources :trips
+  resources :trips do
+    get 'delete'
+  end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

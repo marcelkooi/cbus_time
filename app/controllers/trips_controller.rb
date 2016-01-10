@@ -13,6 +13,7 @@ class TripsController < ApplicationController
   end
 
   def create
+    params[:trip][:start_time] = Time.now
     @trips = Trip.all
     @trip = Trip.create(trip_params)
   end
@@ -24,7 +25,7 @@ class TripsController < ApplicationController
   def update
     @trips = Trip.all
     @trip = Trip.find(params[:id])
-    
+    params[:trip][:end_time] = Time.now if params[:trip][:end_time].blank?
     @trip.update_attributes(trip_params)
   end
 
@@ -40,7 +41,7 @@ class TripsController < ApplicationController
 
 private
   def trip_params
-    params.require(:trip).permit(:type, :start_time, :start_location, :end_time, :end_location, :notes)
+    params.require(:trip).permit(:commute, :start_time, :start_location, :end_time, :end_location, :notes)
   end
 
 end

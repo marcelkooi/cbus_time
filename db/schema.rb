@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160106232927) do
 
   create_table "trips", force: :cascade do |t|
-    t.string   "type"
+    t.string   "commute"
     t.datetime "start_time"
     t.string   "start_location"
     t.datetime "end_time"

@@ -5,14 +5,16 @@
         <ul class="errors"></ul>
 
         <div class="form-group">
-          <%= f.label :type, class: "control-label" %>
-          <%= f.text_field :type, class: "form-control" %>
+          <%= f.label :start_location, class: "control-label" %>
+
+          <% if params[:commute] == "To Work" %>
+            <%= f.select :start_location, options_for_select(['High and Price', 'High and Hubbard'], 'High and Price'), class: "form-control" %>
+          <% elsif params[:commute] == "To Home" %>
+            <%= f.select :start_location, options_for_select(['Front and Main', 'Front and Town'], 'Front and Main'), class: "form-control" %>
+          <% end %>
         </div>
 
-        <div class="form-group">
-          <%= f.label :start_location, class: "control-label" %>
-          <%= f.text_field :start_location, class: "form-control" %>
-        </div>
+          <%= f.hidden_field :commute, value: params[:commute] %>
 
       </div>
       <div class="modal-footer">
