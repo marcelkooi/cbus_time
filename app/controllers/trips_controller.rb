@@ -33,6 +33,10 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:trip_id])
   end
 
+  def notes
+    @trip = Trip.find(params[:trip_id])
+  end
+
   def destroy
     @trips = Trip.all
     @trip = Trip.find(params[:id])
