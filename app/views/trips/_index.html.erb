@@ -1,3 +1,16 @@
+<div class="row">
+	<strong>
+		<div class="col-md-1">Commute</div>
+		<div class="col-md-2">Start Location</div>
+		<div class="col-md-2">Start Time</div>
+		<div class="col-md-2">End Location</div>
+		<div class="col-md-2">End Time</div>
+		<div class="col-md-1">Notes?</div>
+		<div class="col-md-2"></div>
+	</strong>
+</div>
+
+
 <% @trips.each do |trip| %>
 	<div class="row">
 		<div class="col-md-1"> <%= trip.commute %> </div>
@@ -5,6 +18,7 @@
 		<div class="col-md-2"> <%= trip.start_time.strftime("%b %e, %l:%M %p") %> </div>
 		<div class="col-md-2"> <%= trip.end_location %> </div>
 		<div class="col-md-2"> <%= trip.end_time.strftime("%b %e, %l:%M %p") if trip.end_time %> </div>
+		<div class="col-md-1"> <%= "X" if trip.notes.present? %> </div>
 	  <div class="col-md-2 pull-right">
 	  	<% if !trip.end_time %>
 				<%= link_to "End Time", edit_trip_path(trip), remote: true, class: "btn btn-success" %>

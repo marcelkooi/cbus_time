@@ -8,9 +8,9 @@
           <%= f.label :end_location, class: "control-label" %>
 
           <% if Trip.find(params[:id]).commute == "To Home" %>
-            <%= f.select :end_location, options_for_select(['Front and Main', 'High and Prescott'], 'Front and Main'), class: "form-control" %>
-          <% elsif Trip.find(params[:id]).commute == "To Work" %>
             <%= f.select :end_location, options_for_select(['Front and Main', 'High and Prescott'], 'High and Prescott'), class: "form-control" %>
+          <% elsif Trip.find(params[:id]).commute == "To Work" %>
+            <%= f.select :end_location, options_for_select(['Front and Main', 'High and Prescott'], 'Front and Main'), class: "form-control" %>
           <% end %>
         </div>
 
