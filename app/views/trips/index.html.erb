@@ -6,18 +6,20 @@
 			<%= link_to "To Work", new_trip_path(commute: "To Work"), remote: true, class: "btn btn-success" %>
 			<%= link_to "To Home", new_trip_path(commute: "To Home"), remote: true, class: "btn btn-success" %>
 			
-			<div class="new-trip"></div>
-			
+			<div class="new-trip"></div> <br>
 		</div>
 	</div>
-
-	<br>
 
 	<div class="trip-index well">
 		<%= render "index" %>
 	</div>
 
 	<div id="trip-modal" class="modal fade"></div>
+
+	<div class="well">
+		<%= render "dashboard" %>
+
+	</div>
 
 
 </div>
