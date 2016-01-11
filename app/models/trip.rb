@@ -14,12 +14,15 @@ validates :commute, presence: true
 		end
 
 		@averages = 0
+		@trip_count = 0
 
 		@trips.each do |trip|
-			@averages += trip.end_time - trip.start_time
+			if trip.end_time.present?
+				@averages += trip.end_time - trip.start_time
+				@trip_count += 1
 		end
 
-		@trip_average = @averages / @trips.count if @trips.present?
+		@trip_average = @averages / @trip_count if @trips.present?
 
 	end
 
