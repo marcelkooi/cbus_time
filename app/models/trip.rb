@@ -19,7 +19,7 @@ validates :commute, presence: true
 			@averages += trip.end_time - trip.start_time
 		end
 
-		@trip_average = @averages / @trips.count
+		@trip_average = @averages / @trips.count if @trips.present?
 
 	end
 
