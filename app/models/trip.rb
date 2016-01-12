@@ -3,6 +3,7 @@ class Trip < ActiveRecord::Base
 validates :commute, presence: true
 
 	# move to separate module
+	
 	# def sec_to_min(seconds) 
 	# 	mm, ss = seconds.divmod(60)
 	# 	"%d:%d" %[mm, ss]
